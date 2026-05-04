@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sídia Sabores | Restaurante no Dondo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">SÍDIA <span>SABORES</span></div>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#menu">Cardápio</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contacto">Localização</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CAPA COM IMAGEM IMPACTANTE -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Sídia Sabores</h1>
+            <p>A melhor experiência gastronómica do Dondo</p>
+            <a href="#menu" class="btn-menu">Ver Cardápio</a>
+            <a href="https://wa.me/SEUNUMERO" class="btn-whatsapp">Pedir no WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE MENU COMPLETO -->
+    <section id="menu" class="container">
+        <h2 class="section-title">Nosso Cardápio</h2>
+
+        <div class="menu-category">
+            <h3><span class="icon">🥗</span> Aperitivos & Entradas</h3>
+            <div class="menu-items">
+                <div class="item"><span>Chamuças de Carne/Peixe</span> <b>--- MT</b></div>
+                <div class="item"><span>Rissóis Diversos</span> <b>--- MT</b></div>
+                <div class="item"><span>Salada Fresca da Época</span> <b>--- MT</b></div>
+                <div class="item"><span>Asinhas de Frango Crocantes</span> <b>--- MT</b></div>
+            </div>
+        </div>
+
+        <div class="menu-category">
+            <h3><span class="icon">🍛</span> Pratos Principais</h3>
+            <div class="menu-items">
+                <div class="item"><span>Frango à Zambeziana</span> <b>--- MT</b></div>
+                <div class="item"><span>Peixe Grelhado (Fresco do Dia)</span> <b>--- MT</b></div>
+                <div class="item"><span>Caril de Caranguejo</span> <b>--- MT</b></div>
+                <div class="item"><span>Bife à Sídia (Especialidade)</span> <b>--- MT</b></div>
+            </div>
+        </div>
+
+        <div class="menu-category">
+            <h3><span class="icon">🍹</span> Bebidas & Sobremesas</h3>
+            <div class="menu-items">
+                <div class="item"><span>Sumos Naturais</span> <b>--- MT</b></div>
+                <div class="item"><span>Cervejas Nacionais</span> <b>--- MT</b></div>
+                <div class="item"><span>Pudim de Leite</span> <b>--- MT</b></div>
+                <div class="item"><span>Fruta Tropical Fatiada</span> <b>--- MT</b></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO E CONTACTO -->
+    <section id="contacto" class="footer-info">
+        <div class="container">
+            <h2>Onde Estamos</h2>
+            <p>📍 Vila do Dondo - Próximo à Estrada Principal</p>
+            <p>📞 +258 8X XXX XXXX</p>
+            <p>⏰ Aberto todos os dias: 09h às 22h</p>
+        </div>
+    </section>
+
+</body>
+</html>
+
+
+/* Estilo das Categorias do Menu */
+.container {
+    padding: 60px 10%;
+    background-color: #fff;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2d3436;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.menu-category {
+    margin-bottom: 40px;
+}
+
+.menu-category h3 {
+    border-bottom: 2px solid #e67e22;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #e67e22;
+    display: flex;
+    align-items: center;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide em duas colunas no PC */
+    gap: 20px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.item:hover {
+    background: #f1f1f1;
+}
+
+.footer-info {
+    background: #2d3436;
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+}
+
+/* Responsivo para telemóveis */
+@media (max-width: 600px) {
+    .menu-items { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.5rem; }
+}
