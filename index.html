@@ -4,7 +4,240 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sídia Sabores | Restaurante no Dondo</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CONFIGURAÇÕES GERAIS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #fcfaf8;
+            color: #2d3436;
+            line-height: 1.6;
+        }
+
+        /* NAVEGAÇÃO */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #2c3e50;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #e67e22;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #2d3436;
+            margin-left: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #e67e22;
+        }
+
+        /* CAPA (HERO SECTION) COM IMAGEM IMPACTANTE */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Efeito Parallax bonito */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.4);
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            margin-bottom: 35px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        /* BOTÕES */
+        .btn-menu, .btn-whatsapp {
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px;
+            transition: 0.4s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .btn-menu {
+            background: #e67e22;
+            color: white;
+            border: 2px solid #e67e22;
+        }
+
+        .btn-whatsapp {
+            background: transparent;
+            color: white;
+            border: 2px solid #25d366;
+        }
+
+        .btn-menu:hover {
+            background: transparent;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: #25d366;
+            transform: translateY(-3px);
+        }
+
+        /* SEÇÃO DE MENU */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            color: #2d3436;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: #e67e22;
+            display: block;
+            margin: 15px auto;
+        }
+
+        .menu-category {
+            margin-bottom: 60px;
+        }
+
+        .menu-category h3 {
+            font-size: 1.8rem;
+            color: #e67e22;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: 0.3s ease;
+            border-left: 5px solid transparent;
+        }
+
+        .item:hover {
+            transform: scale(1.02);
+            border-left: 5px solid #e67e22;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+
+        .item span {
+            font-weight: 600;
+            color: #2d3436;
+        }
+
+        .item b {
+            color: #e67e22;
+            font-size: 1.1rem;
+            white-space: nowrap;
+        }
+
+        /* RODAPÉ E LOCALIZAÇÃO */
+        .footer-info {
+            background: #2d3436;
+            color: white;
+            text-align: center;
+            padding: 60px 5%;
+        }
+
+        .footer-info h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #e67e22;
+        }
+
+        .footer-info p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 850px) {
+            .menu-items { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 2.8rem; }
+            nav ul { display: none; } /* Simplificação para mobile */
+        }
+    </style>
 </head>
 <body>
 
@@ -14,28 +247,27 @@
             <ul>
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#menu">Cardápio</a></li>
-                <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#contacto">Localização</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- CAPA COM IMAGEM IMPACTANTE -->
+    <!-- CAPA -->
     <section id="inicio" class="hero">
         <div class="hero-content">
             <h1>Sídia Sabores</h1>
             <p>A melhor experiência gastronómica do Dondo</p>
             <a href="#menu" class="btn-menu">Ver Cardápio</a>
-            <a href="https://wa.me/SEUNUMERO" class="btn-whatsapp">Pedir no WhatsApp</a>
+            <a href="https://wa.me/2588XXXXXXXX" class="btn-whatsapp">Pedir no WhatsApp</a>
         </div>
     </section>
 
-    <!-- SEÇÃO DE MENU COMPLETO -->
+    <!-- MENU -->
     <section id="menu" class="container">
         <h2 class="section-title">Nosso Cardápio</h2>
 
         <div class="menu-category">
-            <h3><span class="icon">🥗</span> Aperitivos & Entradas</h3>
+            <h3><span>🥗</span> Aperitivos & Entradas</h3>
             <div class="menu-items">
                 <div class="item"><span>Chamuças de Carne/Peixe</span> <b>--- MT</b></div>
                 <div class="item"><span>Rissóis Diversos</span> <b>--- MT</b></div>
@@ -45,7 +277,7 @@
         </div>
 
         <div class="menu-category">
-            <h3><span class="icon">🍛</span> Pratos Principais</h3>
+            <h3><span>🍛</span> Pratos Principais</h3>
             <div class="menu-items">
                 <div class="item"><span>Frango à Zambeziana</span> <b>--- MT</b></div>
                 <div class="item"><span>Peixe Grelhado (Fresco do Dia)</span> <b>--- MT</b></div>
@@ -55,85 +287,24 @@
         </div>
 
         <div class="menu-category">
-            <h3><span class="icon">🍹</span> Bebidas & Sobremesas</h3>
+            <h3><span>🍹</span> Bebidas & Sobremesas</h3>
             <div class="menu-items">
                 <div class="item"><span>Sumos Naturais</span> <b>--- MT</b></div>
-                <div class="item"><span>Cervejas Nacionais</span> <b>--- MT</b></div>
                 <div class="item"><span>Pudim de Leite</span> <b>--- MT</b></div>
                 <div class="item"><span>Fruta Tropical Fatiada</span> <b>--- MT</b></div>
             </div>
         </div>
     </section>
 
-    <!-- LOCALIZAÇÃO E CONTACTO -->
+    <!-- CONTACTO -->
     <section id="contacto" class="footer-info">
-        <div class="container">
+        <div class="container-footer">
             <h2>Onde Estamos</h2>
-            <p>📍 Vila do Dondo - Próximo à Estrada Principal</p>
-            <p>📞 +258 8X XXX XXXX</p>
+            <p>📍 Vila do Dondo - Próximo à Estrada Principal em frente a escolaa secundaria</p>
+            <p>📞 +258 874055437</p>
             <p>⏰ Aberto todos os dias: 09h às 22h</p>
         </div>
     </section>
 
 </body>
 </html>
-
-
-/* Estilo das Categorias do Menu */
-.container {
-    padding: 60px 10%;
-    background-color: #fff;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #2d3436;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-}
-
-.menu-category {
-    margin-bottom: 40px;
-}
-
-.menu-category h3 {
-    border-bottom: 2px solid #e67e22;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    color: #e67e22;
-    display: flex;
-    align-items: center;
-}
-
-.menu-items {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Divide em duas colunas no PC */
-    gap: 20px;
-}
-
-.item {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background: #f9f9f9;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-.item:hover {
-    background: #f1f1f1;
-}
-
-.footer-info {
-    background: #2d3436;
-    color: white;
-    text-align: center;
-    padding: 40px 0;
-}
-
-/* Responsivo para telemóveis */
-@media (max-width: 600px) {
-    .menu-items { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 2.5rem; }
-}
