@@ -13,19 +13,18 @@
             font-family: 'Poppins', 'Segoe UI', sans-serif;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             background-color: #fcfaf8;
             color: #2d3436;
             line-height: 1.6;
+            padding-bottom: 100px;
         }
 
         /* NAVEGAÇÃO */
         header {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             padding: 15px 5%;
             position: fixed;
             width: 100%;
@@ -42,200 +41,122 @@
             margin: 0 auto;
         }
 
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: #2c3e50;
-            letter-spacing: 1px;
-        }
+        .logo { font-size: 1.6rem; font-weight: 800; color: #2c3e50; }
+        .logo span { color: #e67e22; }
 
-        .logo span {
-            color: #e67e22;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #2d3436;
-            margin-left: 25px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #e67e22;
-        }
-
-        /* CAPA (HERO SECTION) COM IMAGEM IMPACTANTE */
+        /* CAPA (HERO SECTION) */
         .hero {
-            height: 100vh;
+            height: 70vh;
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
-                        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+                        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Efeito Parallax bonito */
+            background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
-            padding: 0 20px;
+            padding-top: 80px;
         }
 
-        .hero-content h1 {
-            font-size: 4.5rem;
+        .hero-content h1 { font-size: 3.5rem; text-transform: uppercase; letter-spacing: 5px; margin-bottom: 10px; }
+        .hero-content p { font-size: 1.2rem; opacity: 0.9; }
+
+        /* MENU E SELEÇÃO */
+        .container { max-width: 1100px; margin: auto; padding: 60px 5%; }
+        
+        .section-title { 
+            text-align: center; 
+            font-size: 2.2rem; 
+            margin-bottom: 40px; 
             text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-bottom: 10px;
-            text-shadow: 2px 4px 10px rgba(0,0,0,0.4);
+            color: #2c3e50;
         }
 
-        .hero-content p {
-            font-size: 1.4rem;
-            margin-bottom: 35px;
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
-
-        /* BOTÕES */
-        .btn-menu, .btn-whatsapp {
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            display: inline-block;
-            margin: 10px;
-            transition: 0.4s;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-        }
-
-        .btn-menu {
-            background: #e67e22;
-            color: white;
-            border: 2px solid #e67e22;
-        }
-
-        .btn-whatsapp {
-            background: transparent;
-            color: white;
-            border: 2px solid #25d366;
-        }
-
-        .btn-menu:hover {
-            background: transparent;
-            color: white;
-        }
-
-        .btn-whatsapp:hover {
-            background: #25d366;
-            transform: translateY(-3px);
-        }
-
-        /* SEÇÃO DE MENU */
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 80px 5%;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.8rem;
-            color: #2d3436;
-            margin-bottom: 50px;
-            text-transform: uppercase;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            width: 80px;
-            height: 4px;
-            background: #e67e22;
-            display: block;
-            margin: 15px auto;
-        }
-
-        .menu-category {
-            margin-bottom: 60px;
-        }
-
-        .menu-category h3 {
-            font-size: 1.8rem;
-            color: #e67e22;
-            margin-bottom: 25px;
+        .menu-category { margin-bottom: 50px; }
+        .menu-category h3 { 
+            color: #e67e22; 
+            margin-bottom: 25px; 
+            border-bottom: 2px solid #e67e22; 
+            padding-bottom: 8px;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
         }
 
         .menu-items {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 25px;
+            gap: 15px;
         }
 
-        .item {
+        .item-select {
             display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            padding: 20px;
+            align-items: center;
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: 0.3s ease;
-            border-left: 5px solid transparent;
+            padding: 18px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 1px solid #eee;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
 
-        .item:hover {
-            transform: scale(1.02);
-            border-left: 5px solid #e67e22;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        .item-select:hover { 
+            border-color: #e67e22;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
         }
 
-        .item span {
-            font-weight: 600;
-            color: #2d3436;
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #e67e22;
+            margin-right: 15px;
         }
 
-        .item b {
-            color: #e67e22;
-            font-size: 1.1rem;
-            white-space: nowrap;
+        .item-info { flex-grow: 1; display: flex; justify-content: space-between; align-items: center; }
+        .item-name { font-weight: 500; font-size: 1rem; color: #444; }
+        .item-price { color: #e67e22; font-weight: bold; font-size: 0.9rem; }
+
+        /* BARRA DE PEDIDO FIXA */
+        .order-bar {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: white; padding: 20px;
+            box-shadow: 0 -5px 25px rgba(0,0,0,0.15);
+            display: flex; justify-content: center; align-items: center;
+            z-index: 2000;
         }
 
-        /* RODAPÉ E LOCALIZAÇÃO */
-        .footer-info {
-            background: #2d3436;
-            color: white;
-            text-align: center;
-            padding: 60px 5%;
+        .btn-order {
+            background: #25d366; color: white; padding: 16px 45px;
+            border-radius: 50px; text-decoration: none; font-weight: bold;
+            font-size: 1.1rem; border: none; cursor: pointer;
+            display: flex; align-items: center; gap: 12px; transition: 0.3s;
         }
 
-        .footer-info h2 {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            color: #e67e22;
+        .btn-order:hover { background: #1da851; transform: scale(1.05); }
+
+        .count-badge {
+            background: white; color: #25d366;
+            padding: 2px 12px; border-radius: 20px; font-size: 0.9rem;
         }
 
-        .footer-info p {
-            margin: 10px 0;
-            font-size: 1.1rem;
-            opacity: 0.9;
+        /* INFO DE LOCALIZAÇÃO */
+        .info-section {
+            background: #2c3e50; color: white;
+            padding: 60px 5%; text-align: center;
         }
 
-        /* RESPONSIVIDADE */
-        @media (max-width: 850px) {
+        .info-card { max-width: 800px; margin: auto; }
+        .info-card h2 { color: #e67e22; margin-bottom: 20px; }
+        .info-card p { margin-bottom: 10px; font-size: 1.1rem; }
+
+        @media (max-width: 768px) {
             .menu-items { grid-template-columns: 1fr; }
-            .hero-content h1 { font-size: 2.8rem; }
-            nav ul { display: none; } /* Simplificação para mobile */
+            .hero-content h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -244,74 +165,104 @@
     <header>
         <nav>
             <div class="logo">SÍDIA <span>SABORES</span></div>
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#menu">Cardápio</a></li>
-                <li><a href="#contacto">Localização</a></li>
-            </ul>
         </nav>
     </header>
 
-    <!-- CAPA -->
-    <section id="inicio" class="hero">
+    <section class="hero">
         <div class="hero-content">
             <h1>Sídia Sabores</h1>
-            <p>A melhor experiência gastronómica do Dondo</p>
-            <a href="#menu" class="btn-menu">Ver Cardápio</a>
-            <a href="https://wa.me/258863237012" class="btn-whatsapp">Pedir no WhatsApp</a>
+            <p>O sabor autêntico do Dondo à sua mesa</p>
         </div>
     </section>
 
-    <!-- MENU -->
-    <section id="menu" class="container">
+    <section class="container">
         <h2 class="section-title">Nosso Cardápio</h2>
 
+        <!-- APERITIVOS AMPLIADOS -->
         <div class="menu-category">
-            <h3><span>🥗</span> Aperitivos & Entradas</h3>
+            <h3>🥗 Aperitivos & Entradas</h3>
             <div class="menu-items">
-                <div class="item"><span>Chamuças de Carne/Peixe</span> <b>--- MT</b></div>
-                <div class="item"><span>Rissóis Diversos</span> <b>--- MT</b></div>
-                <div class="item"><span>Salada Fresca da Época</span> <b>--- MT</b></div>
-                <div class="item"><span>Asinhas de Frango Crocantes</span> <b>--- MT</b></div>
-                <div class="item"><span>Gulamos</span> <b>--- MT</b></div>
+                <label class="item-select"><input type="checkbox" class="food-item" value="Chamuças de Carne (Porção)"><div class="item-info"><span class="item-name">Chamuças de Carne</span> <span class="item-price">--- MT</span></div></label>
+                <label class="item-select"><input type="checkbox" class="food-item" value="Chamuças de Peixe (Porção)"><div class="item-info"><span class="item-name">Chamuças de Peixe</span> <span class="item-price">--- MT</span></div></label>
+                <label class="item-select"><input type="checkbox" class="food-item" value="Rissóis de Camarão"><div class="item-info"><span class="item-name">Rissóis de Camarão</span> <span class="item-price">--- MT</span></div></label>
+                <label class="item-select"><input type="checkbox" class="food-item" value="Asinhas de Frango Picantes"><div class="item-info"><span class="item-name">Asinhas Picantes</span> <span class="item-price">--- MT</span></div></label>
+                <label class="item-select"><input type="checkbox" class="food-item" value="Batata Frita Simples"><div class="item-info"><span class="item-name">Batata Frita</span> <span class="item-price">--- MT</span></div></label>
+                <label class="item-select"><input type="checkbox" class="food-item" value="Salada Mista Fresca"><div class="item-info"><span class="item-name">Salada Mista</span> <span class="item-price">--- MT</span></div></label>
             </div>
         </div>
 
+        <!-- PRATOS PRINCIPAIS AMPLIADOS -->
         <div class="menu-category">
-            <h3><span>🍛</span> Pratos Principais</h3>
+            <h3>🍛 Pratos Principais</h3>
             <div class="menu-items">
-                <div class="item"><span>Frango à Zambeziana</span> <b>--- MT</b></div>
-                <div class="item"><span>Peixe Grelhado (Fresco do Dia)</span> <b>--- MT</b></div>
-                <div class="item"><span>Caril de Caranguejo</span> <b>--- MT</b></div>
-                <div class="item"><span>Bife à Sídia (Especialidade)</span> <b>--- MT</b></div>
-                <div class="item"><span> Matapa </span> <b>--- MT</b></div>
-                <div class="item"><span>peixe frito</span> <b>--- MT</b></div>
-                
-                
+                <label class="item-select"><input type="checkbox" class="food-item" value="Frango à Zambeziana"><div class="item-info"><span class="item-name">Frango à Zambeziana</span> <span class="item-price">--- MT</span></div></label>
+                <label class="item-select"><input type="checkbox" class="food-item" value="Frango Cafreal"><div class="item-info"><span class="item-name">Frango Cafreal</span> <span class="item-price">--- MT</span></div></label>
+                <label class="item-select"><input type="checkbox" class="food-item" value="Peixe da Época Grelhado"><div class="item-info"><span class="item-name">Peixe Grelhado</span> <span class="item-price">--- MT</span></div></label>
+                <label class="item-select"><input type="checkbox" class="food-item" value="Caril de Caranguejo"><div class="item-info"><span class="item-name">Caril de Caranguejo</span> <span class="item-price">--- MT</span></div></label>
+                <label class="item-select"><input type="checkbox" class="food-item" value="Bife de Vaca à Sídia"><div class="item-info"><span class="item-name">Bife à Sídia</span> <span class="item-price">--- MT</span></div></label>
+                <label class="item-select"><input type="checkbox" class="food-item" value="Costelinhas de Porco"><div class="item-info"><span class="item-name">Costelinhas de Porco</span> <span class="item-price">--- MT</span></div></label>
+                <label class="item-select"><input type="checkbox" class="food-item" value="Dobrada Nacional"><div class="item-info"><span class="item-name">Dobrada Nacional</span> <span class="item-price">--- MT</span></div></label>
+                <label class="item-select"><input type="checkbox" class="food-item" value="Massa com Marisco"><div class="item-info"><span class="item-name">Massa com Marisco</span> <span class="item-price">--- MT</span></div></label>
             </div>
         </div>
 
+        <!-- BEBIDAS & SOBREMESAS -->
         <div class="menu-category">
-            <h3><span>🍹</span> Bebidas & Sobremesas</h3>
+            <h3>🍹 Bebidas & Doces</h3>
             <div class="menu-items">
-                <div class="item"><span>Sumos Naturais</span> <b>--- MT</b></div>
-                <div class="item"><span>Pudim de Leite</span> <b>--- MT</b></div>
-                <div class="item"><span>Fruta Tropical Fatiada</span> <b>--- MT</b></div>
-                <div class="item"><span>Refrigerantes</span> <b>--- MT</b></div>
-                <div class="item"><span>Mussi</span> <b>--- MT</b></div>
+                <label class="item-select"><input type="checkbox" class="food-item" value="Sumo de Fruta Natural"><div class="item-info"><span class="item-name">Sumo Natural</span> <span class="item-price">--- MT</span></div></label>
+                <label class="item-select"><input type="checkbox" class="food-item" value="Refrigerante 330ml"><div class="item-info"><span class="item-name">Refrigerantes</span> <span class="item-price">--- MT</span></div></label>
+                <label class="item-select"><input type="checkbox" class="food-item" value="Cerveja Nacional"><div class="item-info"><span class="item-name">Cerveja Gelada</span> <span class="item-price">--- MT</span></div></label>
+                <label class="item-select"><input type="checkbox" class="food-item" value="Pudim Caseiro"><div class="item-info"><span class="item-name">Pudim Caseiro</span> <span class="item-price">--- MT</span></div></label>
+                <label class="item-select"><input type="checkbox" class="food-item" value="Mousse de Chocolate"><div class="item-info"><span class="item-name">Mousse de Chocolate</span> <span class="item-price">--- MT</span></div></label>
             </div>
         </div>
     </section>
 
-    <!-- CONTACTO -->
-    <section id="contacto" class="footer-info">
-        <div class="container-footer">
-            <h2>Onde Estamos</h2>
-            <p>📍 Vila do Dondo - Próximo à Estrada Principal em frente a escola secundaria</p>
-            <p>📞 +258 863237012  </p>
+    <!-- NOVA SECÇÃO DE LOCALIZAÇÃO -->
+    <section class="info-section">
+        <div class="info-card">
+            <h2>Visite-nos ou Peça Agora</h2>
+            <p>📍 <strong>Localização:</strong> Vila do Dondo, Próximo à Estrada Principal</p>
+            <p>🏫 <strong>Ponto de Referência:</strong> Em frente à Escola Secundária</p>
+            <p>📞 <strong>Contacto:</strong> +258 863237012</p>
             <p>⏰ Aberto todos os dias: 09h às 22h</p>
         </div>
     </section>
 
+    <div class="order-bar">
+        <button class="btn-order" onclick="enviarPedido()">
+            Confirmar Pedido <span class="count-badge" id="count">0</span>
+        </button>
+    </div>
+
+    <script>
+        const checkboxes = document.querySelectorAll('.food-item');
+        const countDisplay = document.getElementById('count');
+
+        checkboxes.forEach(box => {
+            box.addEventListener('change', () => {
+                const selected = document.querySelectorAll('.food-item:checked').length;
+                countDisplay.innerText = selected;
+            });
+        });
+
+        function enviarPedido() {
+            const selecionados = document.querySelectorAll('.food-item:checked');
+            if (selecionados.length === 0) {
+                alert("Selecione pelo menos um prato delicioso!");
+                return;
+            }
+
+            let mensagem = "Olá Sídia Sabores! Gostaria de fazer um pedido:\n\n";
+            selecionados.forEach(item => { mensagem += "🍴 " + item.value + "\n"; });
+            
+            mensagem += "\n📍 Entrega/Reserva para próximo à Escola Secundária.";
+
+            const meuNumero = "258863237012"; 
+            const url = "https://wa.me/" + meuNumero + "?text=" + encodeURIComponent(mensagem);
+            window.open(url, '_blank');
+        }
+    </script>
 </body>
 </html>
